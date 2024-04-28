@@ -8,7 +8,7 @@ mutexed - Run one instance of a program at the same time
 
 # INSTALLING
 
-Download [mutexed.exe](https://github.com/harkaitz/c-win-mutexed/raw/master/mutexed.exe) and save it in your path (ie "C:/Windows").
+Download [mutexed.exe](https://github.com/harkaitz/c-win-mutexed/raw/master/pkg/mutexed.exe) and save it in your path (ie "C:/Windows").
 
 # DESCRIPTION
 
