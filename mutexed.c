@@ -12,7 +12,7 @@ char const HELP[] =
     "Ensure that only one instance of COMMAND is executed at the same time. \n"
     ""                                                                     "\n"
     "  -v       : Verbose mode."                                           "\n"
-    "  -n NAME  : Use NAME as the mutex name (default MUTEXED)."           "\n"
+    "  -n NAME  : Use NAME as the mutex name (default DEFAULT)."           "\n"
     "  -r SECS  : Retry waiting every SECS seconds (Default 0)."           "\n"
     "  -t SECS  : Timeout after SECS seconds (Default 3600)."              "\n"
     ""                                                                     "\n"
