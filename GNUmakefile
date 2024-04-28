@@ -5,7 +5,7 @@ all:
 PROJECT=c-win-mutexed
 VERSION=1.0.0
 CC     = x86_64-w64-mingw32-gcc -Wall -std=c99
-PROGS  =mutexed.exe
+PROGS  =pkg/mutexed.exe
 PREFIX =/usr/local
 
 all: $(PROGS)
