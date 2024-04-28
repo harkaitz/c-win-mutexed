@@ -24,6 +24,9 @@ char const HELP[] =
     "Copyright (c) 2024 Harkaitz Agirre, harkaitz.aguirre@gmail.com"       "\n"
     ;
 
+static char *
+escape(char *_s);
+
 int
 main(int _argc, char *_argv[])
 {
@@ -96,10 +99,35 @@ main(int _argc, char *_argv[])
 		}
 	}
 	
+	for (int i = optind + 1; i < _argc; i++) {
+		_argv[i] = escape(_argv[i]);
+	}
+	
 	ret = _spawnvp(_P_WAIT, _argv[optind], (char const **) _argv + optind);
 	
 	ReleaseMutex(mutex);
 	CloseHandle(mutex);
+	
+	return ret;
+}
+
+// Put _s between "" and escape any " inside.
+static char *
+escape(char *_s)
+{
+	size_t	 len = strlen(_s);
+	char	*ret = malloc(len * 2 + 3);
+	char	*dst = ret;
+	
+	*dst++ = '"';
+	for (char *src = _s; *src; src++) {
+		if (*src == '"') {
+			*dst++ = '\\';
+		}
+		*dst++ = *src;
+	}
+	*dst++ = '"';
+	*dst = '\0';
 	
 	return ret;
 }
