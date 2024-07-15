@@ -7,3 +7,4 @@
 TAGS
 FLYCHECK
 ## -- BLOCK:c --
+.make.*
